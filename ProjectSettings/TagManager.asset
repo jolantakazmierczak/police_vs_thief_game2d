@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - OverpassTrigger
+  - UnderpassTrigger
+  - OverpassCollider
   layers:
   - Default
   - TransparentFX
@@ -43,6 +46,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3302259093
+    locked: 0
+  - name: RoadOverpass
+    uniqueID: 2898252345
     locked: 0
   - name: Cars
     uniqueID: 2125088731
