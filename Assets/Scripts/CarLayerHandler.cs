@@ -8,6 +8,7 @@ public class CarLayerHandler : MonoBehaviour
     List<SpriteRenderer> defaultLayerSpriteRenderers = new List<SpriteRenderer>();
 
     List<Collider2D> overpassColliderList = new List<Collider2D>();
+    List<Collider2D> underpassColliderList = new List<Collider2D>();
 
 
     Collider2D carCollider;
@@ -26,6 +27,11 @@ public class CarLayerHandler : MonoBehaviour
         foreach (GameObject overpassColliderGameObject in GameObject.FindGameObjectsWithTag("OverpassCollider"))
         {
             overpassColliderList.Add(overpassColliderGameObject.GetComponent<Collider2D>());
+        }
+
+        foreach (GameObject underpassColliderGameObject in GameObject.FindGameObjectsWithTag("UnderpassCollider"))
+        {
+            underpassColliderList.Add(underpassColliderGameObject.GetComponent<Collider2D>());
         }
 
         carCollider = GetComponentInChildren<Collider2D>();
@@ -59,6 +65,16 @@ public class CarLayerHandler : MonoBehaviour
         {
             Physics2D.IgnoreCollision(carCollider, collider2D, !isDrivingOnOverpass);
         }
+
+        foreach (Collider2D collider2D in underpassColliderList)
+        {
+            if(isDrivingOnOverpass)
+                Physics2D.IgnoreCollision(carCollider, collider2D, true);
+            else 
+                Physics2D.IgnoreCollision(carCollider, collider2D, false);
+        }
+
+
     }
 
     void SetSortingLayer(string layerName)

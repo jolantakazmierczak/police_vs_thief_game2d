@@ -9,6 +9,8 @@ public class MovementController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
 
+
+
     // Start is called before the first frame update
     void Start()
     {

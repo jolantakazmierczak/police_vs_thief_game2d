@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
+
     }
 
     void FixedUpdate()
@@ -28,5 +30,9 @@ public class PlayerMovement : MonoBehaviour
         // Movement
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+
+
+
     }
 }
