@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThiefController : MonoBehaviour
+public class WrapScreen : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,4 +15,9 @@ public class ThiefController : MonoBehaviour
     {
         
     }
+
+
+
+
+
 }

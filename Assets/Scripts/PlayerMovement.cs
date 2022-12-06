@@ -35,4 +35,15 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+
+    void OnTriggerExit2D(Collider2D  other)
+    {
+        if(other.gameObject.name == "WrapScreenCollider")
+        {
+            Debug.Log("Player zderzył się z colliderem.");
+        }
+    }
+
+
 }
