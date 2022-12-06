@@ -22,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+            animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+        }
+
 
     }
 
@@ -31,19 +39,16 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-
-
-
     }
 
 
-    void OnTriggerExit2D(Collider2D  other)
-    {
-        if(other.gameObject.name == "WrapScreenCollider")
-        {
-            Debug.Log("Player zderzył się z colliderem.");
-        }
-    }
+    // void OnTriggerExit2D(Collider2D  other)
+    // {
+    //     if(other.gameObject.name == "WrapScreenCollider")
+    //     {
+    //         Debug.Log("Player zderzył się z colliderem.");
+    //     }
+    // }
 
 
 }
