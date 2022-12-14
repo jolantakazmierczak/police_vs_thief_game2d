@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         
         // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        rb.velocity = new Vector2(movement.x * moveSpeed * Time.fixedDeltaTime, movement.y * moveSpeed * Time.fixedDeltaTime );
+        // rb.velocity = new Vector2(movement.x * moveSpeed * Time.fixedDeltaTime, movement.y * moveSpeed * Time.fixedDeltaTime );
 
     }
 
